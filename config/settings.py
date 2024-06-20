@@ -136,4 +136,4 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 # 覆盖Django自带的User模型
-AUTH_USER_MODEL= "myauth.AbstractUser"
+AUTH_USER_MODEL= "myauth.OAUser"

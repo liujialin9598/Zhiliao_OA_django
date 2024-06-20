@@ -5,6 +5,8 @@ from django.contrib.auth.models import (
     BaseUserManager,
 )
 from django.contrib.auth.hashers import make_password
+from shortuuidfield import ShortUUIDField
+
 # Create your models here.
 
 
@@ -47,11 +49,12 @@ class UserStatusChoices(models.IntegerChoices):
     LOCKED = 3
 
 
-class AbstractUser(AbstractBaseUser, PermissionsMixin):
+class OAUser(AbstractBaseUser, PermissionsMixin):
     """
     自定义的User模型
     """
 
+    uid = ShortUUIDField(primary_key=True)
     username = models.CharField(
         max_length=150,
         unique=False,
@@ -66,6 +69,13 @@ class AbstractUser(AbstractBaseUser, PermissionsMixin):
         choices=UserStatusChoices, default=UserStatusChoices.ACTIVATED
     )
     date_joined = models.DateTimeField(auto_now_add=True)
+    department = models.ForeignKey(
+        "OADepartment",
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name="staffs",
+        related_query_name="staffs",
+    )
 
     objects = UserManager()
 
@@ -87,3 +97,24 @@ class AbstractUser(AbstractBaseUser, PermissionsMixin):
     def get_short_name(self):
         """Return the short name for the user."""
         return self.first_name
+
+
+class OADepartment(models.Model):
+    name = models.CharField(max_length=100)
+    intro = models.CharField(max_length=200)
+    # leader 一对一
+    leader = models.OneToOneField(
+        OAUser,
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name="leader_department",
+        related_query_name="leader_department",
+    )
+    # manager 一对多
+    manager = models.ForeignKey(
+        OAUser,
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name="manager_departments",
+        related_query_name="manager_departments",
+    )

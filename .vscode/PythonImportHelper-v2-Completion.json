@@ -57,12 +57,38 @@
         "documentation": {}
     },
     {
+        "label": "django.db.models.deletion",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.db.models.deletion",
+        "description": "django.db.models.deletion",
+        "detail": "django.db.models.deletion",
+        "documentation": {}
+    },
+    {
         "label": "myauth.models",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "myauth.models",
         "description": "myauth.models",
         "detail": "myauth.models",
+        "documentation": {}
+    },
+    {
+        "label": "shortuuidfield.fields",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shortuuidfield.fields",
+        "description": "shortuuidfield.fields",
+        "detail": "shortuuidfield.fields",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
         "documentation": {}
     },
     {
@@ -127,6 +153,14 @@
         "description": "django.contrib.auth.hashers",
         "isExtraImport": true,
         "detail": "django.contrib.auth.hashers",
+        "documentation": {}
+    },
+    {
+        "label": "ShortUUIDField",
+        "importPath": "shortuuidfield",
+        "description": "shortuuidfield",
+        "isExtraImport": true,
+        "detail": "shortuuidfield",
         "documentation": {}
     },
     {
@@ -294,7 +328,7 @@
         "kind": 5,
         "importPath": "config.settings",
         "description": "config.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = \"static/\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# 覆盖Django自带的User模型\nAUTH_USER_MODEL= \"myauth.AbstractUser\"",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = \"static/\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# 覆盖Django自带的User模型\nAUTH_USER_MODEL= \"myauth.OAUser\"",
         "detail": "config.settings",
         "documentation": {}
     },
@@ -303,7 +337,7 @@
         "kind": 5,
         "importPath": "config.settings",
         "description": "config.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = \"static/\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# 覆盖Django自带的User模型\nAUTH_USER_MODEL= \"myauth.AbstractUser\"",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = \"static/\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# 覆盖Django自带的User模型\nAUTH_USER_MODEL= \"myauth.OAUser\"",
         "detail": "config.settings",
         "documentation": {}
     },
@@ -312,7 +346,7 @@
         "kind": 5,
         "importPath": "config.settings",
         "description": "config.settings",
-        "peekOfCode": "STATIC_URL = \"static/\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# 覆盖Django自带的User模型\nAUTH_USER_MODEL= \"myauth.AbstractUser\"",
+        "peekOfCode": "STATIC_URL = \"static/\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# 覆盖Django自带的User模型\nAUTH_USER_MODEL= \"myauth.OAUser\"",
         "detail": "config.settings",
         "documentation": {}
     },
@@ -321,7 +355,7 @@
         "kind": 5,
         "importPath": "config.settings",
         "description": "config.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# 覆盖Django自带的User模型\nAUTH_USER_MODEL= \"myauth.AbstractUser\"",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# 覆盖Django自带的User模型\nAUTH_USER_MODEL= \"myauth.OAUser\"",
         "detail": "config.settings",
         "documentation": {}
     },
@@ -348,7 +382,7 @@
         "kind": 6,
         "importPath": "myauth.migrations.0001_initial",
         "description": "myauth.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('auth', '0012_alter_user_first_name_max_length'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='AbstractUser',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('auth', '0012_alter_user_first_name_max_length'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='OAUser',\n            fields=[\n                ('password', models.CharField(max_length=128, verbose_name='password')),",
         "detail": "myauth.migrations.0001_initial",
         "documentation": {}
     },
@@ -357,7 +391,7 @@
         "kind": 6,
         "importPath": "myauth.apps",
         "description": "myauth.apps",
-        "peekOfCode": "class MyauthConfig(AppConfig):\n    default_auto_field = \"django.db.models.BigAutoField\"\n    name = \"myauth\"",
+        "peekOfCode": "class MyauthConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'myauth'",
         "detail": "myauth.apps",
         "documentation": {}
     },
@@ -375,16 +409,25 @@
         "kind": 6,
         "importPath": "myauth.models",
         "description": "myauth.models",
-        "peekOfCode": "class UserStatusChoices(models.IntegerChoices):\n    ACTIVATED = 1\n    UNACTIVATED = 2\n    LOCKED = 3\nclass AbstractUser(AbstractBaseUser, PermissionsMixin):\n    \"\"\"\n    自定义的User模型\n    \"\"\"\n    username = models.CharField(\n        max_length=150,",
+        "peekOfCode": "class UserStatusChoices(models.IntegerChoices):\n    ACTIVATED = 1\n    UNACTIVATED = 2\n    LOCKED = 3\nclass OAUser(AbstractBaseUser, PermissionsMixin):\n    \"\"\"\n    自定义的User模型\n    \"\"\"\n    uid = ShortUUIDField(primary_key=True)\n    username = models.CharField(",
         "detail": "myauth.models",
         "documentation": {}
     },
     {
-        "label": "AbstractUser",
+        "label": "OAUser",
         "kind": 6,
         "importPath": "myauth.models",
         "description": "myauth.models",
-        "peekOfCode": "class AbstractUser(AbstractBaseUser, PermissionsMixin):\n    \"\"\"\n    自定义的User模型\n    \"\"\"\n    username = models.CharField(\n        max_length=150,\n        unique=False,\n    )\n    first_name = models.CharField(max_length=150, blank=True)\n    last_name = models.CharField(max_length=150, blank=True)",
+        "peekOfCode": "class OAUser(AbstractBaseUser, PermissionsMixin):\n    \"\"\"\n    自定义的User模型\n    \"\"\"\n    uid = ShortUUIDField(primary_key=True)\n    username = models.CharField(\n        max_length=150,\n        unique=False,\n    )\n    first_name = models.CharField(max_length=150, blank=True)",
+        "detail": "myauth.models",
+        "documentation": {}
+    },
+    {
+        "label": "OADepartment",
+        "kind": 6,
+        "importPath": "myauth.models",
+        "description": "myauth.models",
+        "peekOfCode": "class OADepartment(models.Model):\n    name = models.CharField(max_length=100)\n    intro = models.CharField(max_length=200)\n    # leader 一对一\n    leader = models.OneToOneField(\n        OAUser,\n        null=True,\n        on_delete=models.SET_NULL,\n        related_name=\"leader_department\",\n        related_query_name=\"leader_department\",",
         "detail": "myauth.models",
         "documentation": {}
     },
