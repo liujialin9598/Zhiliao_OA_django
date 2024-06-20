@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "corsheaders",
+    "myauth",
 ]
 
 MIDDLEWARE = [
@@ -132,3 +133,7 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# 覆盖Django自带的User模型
+AUTH_USER_MODEL= "myauth.AbstractUser"
